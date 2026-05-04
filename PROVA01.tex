@@ -1,0 +1,223 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% INSTRUÇÕES PARA USAR A CLASSE
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 0 - PARA FAZER USO DA CLASSE:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Primeiramente deve-se declrar a classe:
+%
+% \documentclass{ufrgsprova}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1 - DADOS DO CABEÇALHO:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Depois preencha os dados do cabeçalho com os seguintes comandos:
+%
+% \disciplina{ENG01156 - Mecânica}
+% \professor{Prof. Felipe Quevedo}
+% \tituloProva{Avaliação 01 - Estática}
+% \logo{ufrgs.png}
+% \pastaquestoes{questoes}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2 - COLOCANDO OS ARQUIVOS DAS QUESTÕES EM SUBPASTAS:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Crie uma subpasta na raiz e coloque os arquivos .tex e figuras (pdf, png, 
+% jpeg) das questões. Por exemplo: questoes, prova01, turmaA/avaliacao01 etc.
+%
+% Neste exemplo, tem-se:
+%
+% prova01/q1.tex
+% prova01/q1.pdf
+% prova01/q2.tex
+% prova01/q2.png
+% 
+% A estrutura dos arquivos fica sendo:
+%
+% prova/
+% ├── prova01.tex
+% ├── instrucoes.tex
+% ├── ufrgsprova.cls
+% ├── prova01/
+% │   ├── q01.tex
+% |   ├── q01.pdf
+% │   ├── q02.tex
+% |   ├── q02.png
+%
+% Veja que tanto os arquivos das questões quanto as figuras das questões
+% estão na mesma subpasta.
+%
+% A subpasta criada está referenciada com o seguinte comando:
+%
+% \pastaquestoes{[Digite aqui o nome da pasta]}, por exemplo,
+% \pastaquestoes{questoes}
+% 
+% Perceba que você pode ter várias pastas diferentes. Esse comando
+% especifica a pasta em que as questões serão buscadas.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3 — INSTRUÇÕES PARA A PROVA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% As instruções são armazenadas em arquivo externo. Por exemplo:
+% instrucoes.tex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4 — INICIANDO A ESTRUTURA DO DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Dentro do ambiente do documento coloque os seguintes comandos
+% para iniciar o cabeçalho da prova.
+%
+% 	\cabecalhoProva
+%
+%		Esse comando colocará o logo e os dados do cabeçalho no documento.
+%
+%	\instrucoes[\small]{instrucoes_padrao.tex}
+%
+%		Esse comando adicionará o arquivo de instruções. Veja que pode-se ter %		vários arquivos de instruções e usar um deles. Por exemplo:
+%
+% 			\instrucoes[\small]{instrucoes_para_recuperacao.tex}
+% 			\instrucoes[\small]{instrucoes_com_consulta.tex}
+%
+%	\identificacao
+%
+% 		Esse comando colocará no documento a seguinte linha:
+%
+% 			Nome: __________________ Cartão: ______  Data: ____________
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5 — USO DE DUAS COLUNAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Para abrir e fechar o ambiente configurado para duas colunas:
+%
+% \iniciaduascolunas
+%		
+%	....[coloque aqui as questoes e figuras]
+%
+% \finalizaduascolunas
+%
+% Pode-se utilizar o comando \columnbreak para forçar uma quebra
+% de coluna manualmente.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6 — USO DE QUESTÕES EM UMA ÚNICA COLUNA E OUTRA EM BRANCO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Para abrir e fechar o ambiente configurado para ter questões em
+% apenas uma coluna:
+%
+% \iniciaumacoluna
+%
+% 	....[coloque aqui as questoes e figuras]
+%
+% \finalizaumacoluna
+%
+% Pode-se utilizar o comando \newpage para iniciar uma nova folha
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7 — ADICIONANDO AS QUESTÕES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sintaxe:
+%
+% \questao{pontuação}{arquivo}{numeroFigura}
+%
+% Onde:
+%
+% pontuação 	→ valor da questão
+% arquivo 		→ nome do arquivo .tex da questão
+% numeroFigura 	→ número da figura associada
+%
+% Exemplo:
+%
+% \questao{2,0}{q01}{1}
+%
+% A numeração das questões é feita automaticamente.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 8 — ADICIONANDO AS FIGURAS DAS QUESTÕES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sintaxe:
+%
+% \figuradaquestao{tamanho}{arquivo}{legenda}
+%
+% Onde:
+%
+% tamanho 		→ largura da figura
+% arquivo 		→ nome da figura
+% legenda 		→ texto da legenda
+%
+% Exemplo:
+%
+% \figuradaquestao{0.55\linewidth}{q01}{Diagrama de forças do sistema}
+%
+% A númeração das figuras é feita automaticamente. E a legenda
+% é inserida automaticamente. Ficando por exemplo:
+%
+% Figura 1. Diagrama de forças do sistema
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 9 — REFERENCIAR FIGURA NO TEXTO DA QUESTÃO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dentro do arquivo .tex da questão:
+%
+% Use o comando:
+%
+% \figuraquestao
+%
+% Exemplo:
+%
+% "Considere o sistema mostrado na \figuraquestao."
+% "A caixa da \figuraquestao~ tem um peso de 550N."
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{ufrgsprova}
+
+\disciplina			{ENG01156 - Mecânica}
+\professor			{Prof. Felipe Quevedo}
+\tituloProva		{Avaliação 01 - Estática}
+\logo				{ufrgs.png}
+\pastaquestoes		{prova01}
+
+\begin{document}
+	
+	% Cabeçalho
+	
+	\cabecalhoProva
+	\instrucoes[\small]{instrucoes_padrao.tex}
+	\identificacao
+	
+	% Questões
+	
+	\iniciaduascolunas
+	%\iniciaumacoluna
+	
+	\questao{2,0}{q1}{1}
+	\figuradaquestao{0.4\textwidth}{q1}{Diagrama de forças do sistema.}
+	
+	\questao{2,0}{q2}{2}
+	\figuradaquestao{0.4\textwidth}{q2}{Sistema Mastro-Cabo.}	
+	
+	\questao{2,0}{q3}{3}
+	\figuradaquestao{0.4\textwidth}{q3}{Avião.}
+
+	\questao{2,0}{q4}{4}
+	\figuradaquestao{0.4\textwidth}{q4}{Alicate.}	
+	
+	\finalizaduascolunas
+	%\finalizaumacoluna
+	
+	\questao{2,0}{q5}{5}
+	\figuradaquestao{0.6\textwidth}{q5}{Treliça.}
+	
+\end{document}

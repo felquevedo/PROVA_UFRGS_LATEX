@@ -1,0 +1,68 @@
+# Arquivos auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.run.xml
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.sav
+
+# Arquivos de compiladores
+*.xdv
+*.nav
+*.snm
+
+# Latexmk
+latexmkrc
+
+# PDFs gerados (opcional — remova se quiser versionar o PDF)
+*.pdf
+
+# Pastas comuns de build
+/build/
+/out/
+/dist/
+
+# Editor VS Code
+.vscode/
+
+# Editor TeXstudio
+*.txsprofile
+*.txssession
+
+# Editor Overleaf local
+*.synctex(busy)
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Arquivos de backup
+*~
+
+# Arquivos específicos de figuras intermediárias (caso use)
+*.eps-converted-to.pdf
