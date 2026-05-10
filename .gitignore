@@ -38,7 +38,7 @@
 latexmkrc
 
 # PDFs gerados (opcional — remova se quiser versionar o PDF)
-*.pdf
+# *.pdf
 
 # Pastas comuns de build
 /build/
