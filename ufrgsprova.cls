@@ -31,6 +31,7 @@
 \RequirePackage{multicol}
 \RequirePackage{needspace}
 \RequirePackage{paracol}
+\RequirePackage{shellesc}
 
 % Margens
 \geometry{
@@ -209,7 +210,6 @@
 	
 	\begin{center}
 		
-		
 		\IfFileExists{\@pastaquestoes/#2.pdf}{%
 			\includegraphics[width=#1]{\@pastaquestoes/#2.pdf}%
 		}{%
@@ -228,7 +228,6 @@
 		\vspace{0.15cm}
 		
 		\textbf{Figura \thefiguraquestao.} #3
-		
 		
 	\end{center}
 	
