@@ -76,8 +76,6 @@
 	\end{paracol}
 }
 
-
-
 % Cabeçalho
 \RequirePackage{array}
 
@@ -133,6 +131,32 @@
 	\vspace{0.3cm}
 	\hrule
 	\vspace{0.4cm}
+}
+
+% Formulário
+\NewDocumentCommand{\formulario}{m m}{
+	
+	\centering{\noindent\textbf{FORMULÁRIO}}
+	
+	\begin{center}
+	
+	
+	\IfFileExists{\@pastaquestoes/#2.pdf}{%
+		\includegraphics[width=#1]{\@pastaquestoes/#2.pdf}%
+	}{%
+		\IfFileExists{\@pastaquestoes/#2.png}{%
+			\includegraphics[width=#1]{\@pastaquestoes/#2.png}%
+		}{%
+			\IfFileExists{\@pastaquestoes/#2.jpg}{%
+				\includegraphics[width=#1]{\@pastaquestoes/#2.jpg}%
+			}{%
+				\IfFileExists{\@pastaquestoes/#2.jpeg}{%
+					\includegraphics[width=#1]{\@pastaquestoes/#2.jpeg}%
+				}{%
+					\textit{Figura não encontrada: \@pastaquestoes/#2}%
+	}}}}
+	\end{center}
+	
 }
 
 % Identificação
